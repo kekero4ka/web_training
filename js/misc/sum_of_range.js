@@ -1,4 +1,4 @@
-function range(start, end) {
+function range(start, end, operation) {
     var arr = [];
 
     if (arguments[2] != undefined)

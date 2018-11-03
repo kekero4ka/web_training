@@ -17,8 +17,8 @@ console.log('Default name cat:' , noName.name);
 // using Object.create(proto, props);
 const ob3 = Object.create(null); // no proto at all
 const ob4 = Object.create({}); // Object.prototype
-console.log('Proto of null based ob: ', Object.getPrototypeOf(ob3));
-console.log('Proto of empty based ob: ', Object.getPrototypeOf(ob4));
+console.log('Proto of null based ob: ', Object.getPrototypeOf(ob3), '; ob3._proto_ is: ', ob3.__proto__);
+console.log('Proto of {} based ob: ', Object.getPrototypeOf(ob4), '; ob4._proto_ is: ', ob4.__proto__);
 
 // proto inheritance
 function inherit(p) {
