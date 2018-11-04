@@ -1,11 +1,12 @@
-const ancestry = require('ancestry.json');
+const import_ancestry = require('ancestry.json');
+
 // This makes sure the data is exported in node.js —
 // `require(./path/to/ancestry.json.js)` will get you the array.
-if (typeof module != "undefined" && module.exports)
+if (typeof module !== "undefined" && module.exports)
     module.exports = ANCESTRY_FILE;
 
-var ancestry = JSON.stringify(ancestry);
-var size = JSON.parse(ancestry).length;
+const ancestry = JSON.stringify(import_ancestry);
+const size = JSON.parse(ancestry).length;
 
 console.log(size);
 
@@ -25,7 +26,7 @@ function transformFunc(person){
     return person.name;
 }
 
-var overNinety = ancestry.filter(filterCondition);
+const overNinety = ancestry.filter(filterCondition);
 
 // console.log(overNinety);
 overNinety.forEach(console.log);
