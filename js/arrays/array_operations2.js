@@ -38,3 +38,9 @@ true if there exists at least one element in the array for which the predicate r
 true, and returns false if and only if the predicate returns false for all elements of
 the array */
 console.log('14) .some(): ', [1, 'o', 77, NaN].some(e => isNaN(e)));
+
+// .find() - returns the value of the 1st elem that meets the conditions
+const ppl = [{name: 'iri', title: 'fe dev'}, {name: 'bob', title: 'be dev'}, {name: 'Met', title: 'qa'}];
+const isDev = p => p.title === 'fe dev';
+console.log('15) .find(): ', ppl.find(isDev));
+
