@@ -4,6 +4,6 @@ function getName(welcome) {
 
 let user = {
     name: 'Iri'
-}
+};
 
 console.log(getName.call(user, 'Hoi, '));
