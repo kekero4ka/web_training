@@ -9,3 +9,6 @@ function factorial(n) {
 }
 
 factorial[1] = 1;
+factorial(5);
+
+console.log('factorial[3]: ', factorial[3]);
