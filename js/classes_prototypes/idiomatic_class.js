@@ -8,9 +8,9 @@ function range(from, to) {
 }
 
 range.methods = {
-    includes: function(n) { return n > this.from && n < this.to},
-    foreach: function(f) {
-        for(let i  = this.from; i <= this.to; i++) {
+    includes: (n) => n > this.from && n < this.to,
+    foreach: f => {
+        for (let i = this.from; i <= this.to; i++) {
             console.log(f(i));
         }
     }
@@ -31,4 +31,6 @@ const r = range(1, 3);
 console.log('1) create a range from ', r.from + ' to ' + r.to);
 console.log('2) range.includes(2): ', r.includes(2));
 console.log('3) range.foreach(pow): ');
-r.foreach(pow)
+console.log('range object that is function: ', range);
+console.log('r object created based on range.methods: ', r);
+r.foreach(pow);
