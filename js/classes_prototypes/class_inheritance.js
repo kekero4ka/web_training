@@ -41,7 +41,7 @@ class Animal extends makeSound() {
     super(..args);
  }
 
- - internally, extends keyword adds [[Prototype]] reference from Rabbit.prototype to Animal.prototype
+ - internally, extends keyword adds [[Prototype]] reference from Cat.prototype to Animal.prototype
  - In JavaScript, there’s a distinction between a “constructor function of an inheriting class” and all others.
  In an inheriting class, the corresponding constructor function is labeled with a special internal property [[ConstructorKind]]:"derived".
 

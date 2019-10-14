@@ -1,15 +1,18 @@
 // if name isn't specified, it defaults to 'Io'
-function Cat(name='Io') {
+function Cat(name = 'Io') {
     this.name = name;
 }
 
-Cat.prototype.getName = function() {return this.name;}
+Cat.prototype.getName = function () {
+    return this.name;
+};
 
 function Kitty(name) {
     Cat.call(this, name);
 }
 
-Kitty.prototype = Cat.prototype;
+Object.setPrototypeOf(Kitty.prototype, Cat.prototype);
+// alternatively => Kitty.prototype = Cat.prototype
 
 const kid = new Kitty('Bob');
 console.log('kid\'s name: ', kid.getName());
