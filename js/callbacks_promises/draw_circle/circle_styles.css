@@ -1,0 +1,15 @@
+.circle {
+    /*transition-property: width, height;*/
+    transition-duration: 3s;
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: black;
+    border-radius: 50%; /* if commented out, draws a rectangular */
+}
+
+.message-ball {
+    font-size: 20px;
+    color: white;
+    line-height: 200px;
+    text-align: center;
+}

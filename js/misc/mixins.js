@@ -14,13 +14,21 @@
  * For instance here the mixin sayHiMixin is used to add some “speech” for User
  */
 
-const mixin = {
-    sayHi() {
-        console.log(this.name, ' welcomes you');
-    },
+let sayMixin = {
+    say(phrase) {
+        alert(phrase);
+    }
+};
 
+let sayHiMixin = {
+    __proto__: sayMixin, // (or we could use Object.create to set the prototype here)
+
+    sayHi() {
+        // call parent method
+        super.say(`Hello ${this.name}`); // (*)
+    },
     sayBye() {
-        console.log(this.name, ' says bye');
+        super.say(`Bye ${this.name}`); // (*)
     }
 };
 
@@ -30,6 +38,15 @@ class User {
     }
 }
 
-Object.assign(User.prototype, mixin);
+// copy the methods
+Object.assign(User.prototype, sayHiMixin);
 
-new User('Imi').sayHi();
+// now User can say hi
+new User("Dude").sayHi(); // Hello Dude!
+
+/**
+ methods sayHi and sayBye were initially created in sayHiMixin. So even though they got copied,
+ their [[HomeObject]] internal property references sayHiMixin. As super looks for parent methods in [[HomeObject]].[[Prototype]],
+ that means it searches sayHiMixin.[[Prototype]], not User.[[Prototype]].
+ */
+
