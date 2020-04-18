@@ -1,15 +1,16 @@
-class Meal {
-    private readonly product: string;
-
-    constructor(product: string) {
-        this.product = product;
-    }
-
-    getProduct() {
-        console.log('Product: ', this.product);
-        return this.product;
+function WithDecorator(template: string, id: string) {
+    return function (_: Function) {
+        const appl = document.getElementById(id)!;
+        appl.innerHTML = template;
     }
 }
 
-const meal = new Meal('buckwheat with batata');
-meal.getProduct();
+@WithDecorator("<h1>I'm a header</h1>", 'app')
+class Test {
+    constructor() {
+        console.log('Creating person object');
+    }
+}
+
+const test = new Test();
+console.log(test);
